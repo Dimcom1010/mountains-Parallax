@@ -1,0 +1,974 @@
+@charset
+
+/*Обнуление*/
+*{  padding: 0; margin: 0;  border: 0;}
+*,*:before,*:after{ -moz-box-sizing: border-box;  -webkit-box-sizing: border-box; box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{ margin: 0; height: 100%; width: 100%;font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+/*конец обнулени */
+
+
+
+/* подключение шрифтов*/
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+
+@font-face {
+  font-family: "Chunk Five";
+  src: url('../font/chunkfive.regular.eot');
+  src: local('☺'), url('../font/chunkfive.regular.woff') format('woff'), url('../font/chunkfive.regular.ttf') format('truetype'), url('../font/chunkfive.regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Black';
+  src: url('../font/Lato-Black.eot');
+  src: local('☺'), url('../font/Lato-Black.woff') format('woff'), url('../font/Lato-Black.ttf') format('truetype'), url('../font/Lato-Black.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Heavy';
+  src: url('../font/Lato-Heavy.eot');
+  src: local('☺'), url('../font/Lato-Heavy.woff') format('woff'), url('../font/Lato-Heavy.ttf') format('truetype'), url('../font/Lato-Heavy.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-MediumItalic';
+  src: url('../font/Lato-Medium.eot');
+  src: local('☺'), url('../font/Lato-Medium.woff') format('woff'), url('../font/Lato-Medium.ttf') format('truetype'), url('../font/Lato-Medium.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Semibold';
+  src: url('../font/Lato-Semibold.eot');
+  src: local('☺'), url('../font/Lato-Semibold.woff') format('woff'), url('../font/Lato-Semibold.ttf') format('truetype'), url('../font/Lato-Semibold.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clarendon BT - Black";
+  src: url('../font/Clarendon Black BT.eot');
+  src: local('☺'), url('../font/Clarendon Black BT.woff') format('woff'), url('../font/Clarendon Black BT.ttf') format('truetype'), url('../font/Clarendon Black BT.svg') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+/*свойства параллакса начало*/
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 1;
+}
+.parallax {
+
+}
+.parallax__list {             /*вободное движение параллакса*/
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  /*background-color: #00f;*/
+  top: -20px;
+  left: 0;
+  overflow: hidden;
+}
+.parallax__element {
+  position: fixed;
+}
+.parallax__element span{
+  display: inline-block;
+
+  transform-origin: 0 0
+  margin: 0 0 0 0;
+  
+}
+.parallax__element_1 {
+  top: -100px;
+  right: 40%;
+}
+.parallax__element_1 span {
+  transition: 20s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  width: 2800px;
+  height: 1600px;
+  background: url('../img/fog/fog_1_left.png') 0 0/ 100% no-repeat;
+  transform: translate3d(0,0,0) ;
+}
+.parallax__element_1 span:hover{
+  transition: 5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: translate3d(-20%,0,0) ;
+}
+
+.parallax__element_2 {
+  top: -400px;
+  left: 40%;
+}
+.parallax__element_2 span {
+  width: 2800px;
+  height: 1600px;
+  background: url('../img/fog/fog_1_right.png') 0 0/ 100% no-repeat;
+  transition: 20s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+}
+.parallax__element_2 span:hover{
+  transition: 5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: translate3d(20%,0,0);
+}
+
+.parallax__element_3 {
+  top: -100px;
+  right: 75%;;
+}
+.parallax__element_3 span {
+  width: 1100px;
+  height: 900px;
+  background: url('../img/fog/fog_2_top_left.png') 0 0/ 100% no-repeat;
+}
+
+.parallax__element_4 {
+  top: -300px;
+  left: 70%;;
+}
+.parallax__element_4 span {
+  width: 900px;
+  height: 1100px;
+  background: url('../img/fog/fog_2_top_right.png') 0 0/ 100% no-repeat;
+
+}
+@keyframes fog {
+    0%{
+    transform: translate3d(0,0,0) ;
+  }
+  100%{
+    transform: translate3d(-10%,0,0) ;
+  }
+}
+
+/*свойства параллакса конец*/
+
+/*конец подключение шрифтов*/
+
+.wrapper {
+  width: 100%;
+  background: url('../img/gradient_top.png')0 0/100% 150px no-repeat, url(../img/BackGround_01.jpg ) 0 0/cover no-repeat fixed ;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 100%;
+}
+/*плавное отображение при загрузке начало*/
+.wrapper {
+  overflow: hidden;
+  opacity: 0;
+  transition: all 3.0s ease 0s;  
+}
+.wrapper.active{
+  opacity: 1;
+}
+/*плавное отображение при загрузке конец*/
+
+.content {
+  background: transparent;
+}
+.conteiner {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+.header {
+  width: 100%;  
+}
+.header__nav {
+
+}
+
+                                                              /* Z*/
+.header__navZ {
+  padding: 53px 0 0 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  color: #ffffff;
+  font-family: 'Montserrat';
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: auto 0 ;
+  padding: 0 0 0 29px;
+
+}
+
+.header__burger {
+  display: none;
+}
+
+                        /* меню*/
+.logo{
+  display: inline-block;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  letter-spacing: 0.81px;
+
+}
+
+.header__menu {
+  height: 100%;
+  display: flex;
+  padding: 0 60px 0 0;
+  font-family: 'Lato';
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.45px;
+  letter-spacing: 0.45px;
+  position: relative;
+}
+
+
+.menu__button {
+  color: #ffffff;
+  margin: -5px 21px 0 0 ;
+  padding: 14px 18px ;
+  border: 3px solid rgba(255,255,255,0);
+  border-radius: 36px;
+  transition: 0.3s ease-in-out;  
+}
+
+.header__user1{
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background: url(../img/roza.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  border-radius: 50%;
+  margin: 0 -11px 0 10px;
+  position: relative;
+}
+.header__user1:after{
+  content: "\25BC";
+  position: absolute;
+  top: 16px;
+  left: 44px;
+  color: #fff;
+  font-size: 10px;
+
+}
+
+
+.menu__button:hover {
+  border: 3px solid rgba(255,255,255,1);
+}
+                        /* конец меню*/
+
+.header__title {
+
+  width: 100%;
+  margin: 136px 0;
+  text-align: center;
+
+}
+.header__welcome {
+
+  color: #ffffff;
+  font-family: "Clarendon BT - Black";
+  font-size: 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.text_mod{
+  color: #01a2a6;
+
+}
+.header__slogan {
+color: #fafafa;
+font-family: Lato;
+font-size: 18px;
+font-weight: 400;
+line-height: 35px;
+text-align: center;
+margin: 7px 0 0 0;
+}
+
+                          /* кнопка начало */
+.button {
+  display: inline-block;
+  padding: 29px 37px;
+  border-radius: 74px;
+  font-family: 'Lato-Black';
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+
+.header__button {
+  margin: 39px auto 0; 
+  background-color: #ffffa6;
+  color: #01a2a6;
+  position: relative;
+  z-index: 10;
+}
+
+.header__button:hover {
+  background-color: #fff;
+}
+
+                          /* кнопка конец */
+
+                                     /* Начало media бургер*/
+@media ( max-width: 1000px){
+  /*адоптация параллакса начало*/
+  .parallax__list{
+    display: none;
+  }
+
+  .menu__button_1 {order:2;margin: 20px 0 0 0;}
+  .menu__button_2 {order:3;}
+  .menu__button_3 {order:4;}
+  .menu__button_4 {order:5;}
+  .menu__button_5 {order:6;}
+  .menu__button_6 {order:1; }
+  /*адоптация параллакса конец*/
+                       /* Начало бургер*/
+  .header__burger {
+    width: 29px;
+    height: 20px;
+    display: block;
+    position: fixed;
+    top: 10px;
+
+    right: 29px;*/
+    z-index: 11;
+  }
+  .header__burger span{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    transition: 0.3s ease-in-out;
+
+  }
+  .header__burger:before,
+  .header__burger:after{
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+  .header__burger:before{
+    top: 0;
+    left: 0;
+  }
+  .header__burger:after{
+    bottom: 0;
+    left: 0;
+  }
+  .header__button {
+   position: relative;
+   z-index: 12;
+}
+
+                              /*начало active  burger*/
+  .header__burger.active:before{
+    top: 9px;
+    transform: rotate(45deg);
+  }
+    .header__burger.active:after{
+      bottom: 9px;
+    transform: rotate(-45deg);
+  }
+  .header__burger.active span{
+    transform: scale(0);
+
+  }
+
+                              /*конец active  burger*/
+  .header__logo {
+    display: flex;
+    position: absolute;
+    top: 7px;
+    
+
+  }
+    .logo {
+      display: block;
+      position: relative;
+    }
+
+  .logo:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: -100px;
+    width: 1400px;
+    height: 43px;
+    background-color: #01a2a6;
+    z-index: -1;
+    
+
+}
+
+  .header__menu {
+
+    flex-direction: column;
+    transform: translateX(-120px);
+    transition: 0.3s ease-in-out;
+  }
+
+.header__user1{
+    margin: 0 -11px 0 20px;
+}
+                                                              /* Z*/
+  .header__navZ {
+    position: relative;
+    width: 1%;
+    height: 100%;
+    padding: 50px 0 0 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(23, 23, 23, 0.0), rgba(46, 46, 46, 0.0), rgba(70, 70, 70, 0.0), rgba(93, 93, 93, 0.0), rgba(116, 116, 116, 0.0), rgba(139, 139, 139, 0.0), rgba(162, 162, 162, 0.0), rgba(185, 185, 185, 0.0), rgba(209, 209, 209, 0.0), rgba(232, 232, 232, 0.0), rgba(255, 255, 255, 0));
+    transition: 2s ease-in-out;
+    z-index: 100;
+  }
+                              /*начало active  burger menu*/
+    .header__navZ.active {
+      width: 100%;
+    height: 100%;
+    padding: 50px 0 0 0;
+    z-index: 100;
+
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(23, 23, 23, 0.47), rgba(46, 46, 46, 0.43), rgba(70, 70, 70, 0.38), rgba(93, 93, 93, 0.33), rgba(116, 116, 116, 0.28), rgba(139, 139, 139, 0.24), rgba(162, 162, 162, 0.19), rgba(185, 185, 185, 0.14), rgba(209, 209, 209, 0.09), rgba(232, 232, 232, 0.05), rgba(255, 255, 255, 0));
+  }
+  .header__menu.active {
+
+    transform: translateX(0px);
+  }
+                              /*конец active  burger menu*/
+
+                       /* Конец бургер*/
+  .header__navZ{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
+  .menu__button{
+    display: block;
+  }
+  .header__user{
+    display: none;
+  }
+
+  .header__welcome {
+    margin: 0px 20px 0 20px;
+  }
+
+  .header__slogan{
+    margin: 7px 20px 0 20px;
+  }
+
+}
+                                     /* конец media*/
+
+
+                                                                  /*БЛОК info начало*/
+
+
+.blockInfo {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  background: rgba(255,255,255,0.8);
+  padding: 120px 55px 0 ;
+}
+
+.blockinfo__img {
+  display: flex;
+  flex: 0 0 50%;
+  padding:  0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.blockinfo__img img{
+  padding: 0 20px 0 0; 
+  max-width: 452px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.blockInfo__titelText {
+  width: 50%;
+  margin: 0 0 108px  0;
+
+}
+
+.title_h2 {
+
+  color: #29d9c2;
+  font-family: "Clarendon BT - Black";
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 60px;
+
+}
+
+.blockInfo__text {
+  padding: 55px 0 0 0;
+}
+.paragraph{
+  max-width: 562px;
+  color: #777700;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35px;
+}
+                       /* Начало БЛОК info media*/ 
+@media ( max-width: 1000px){
+
+  .blockInfo {
+    display: flex;
+  }
+
+
+  .blockinfo__img {
+    display: none;
+  }
+
+  .blockInfo__titelText {
+    width: 100%;
+    margin: 0 0 50px  0;
+    text-align: center;
+  }
+
+  .title_h2 {
+    color: #29d9c2;
+    font-family: "Clarendon BT - Black";
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 60px;
+  }
+
+  .blockInfo__text {
+    padding: 55px 0 0 0;
+  }
+
+  .paragraph{
+    text-align: left;
+    max-width: 100%;
+    color: #777700;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 35px;
+  }
+
+}
+
+                       /* конец БЛОК info media*/
+                                                                  /*БЛОК info конец*/
+
+                                                                  /*БЛОК destination начало*/
+
+.destination {
+  min-width: 0;
+  width: 100%;
+  background-color: #f2fefe;
+}
+.destination__title {
+    min-width: 0;
+  display: block;
+  padding: 66px 168px 67px 101px;
+}
+
+.destination__titlText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 77px 0;
+  letter-spacing: 4px;
+
+}
+
+.title_h2 {  }
+.text_mod {}
+.paragraph {}
+
+.destination__i {
+  color: #aeaeae;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 35px;
+  position: relative;
+  letter-spacing:normal;
+}
+.destination__i:before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url(../img/icon/icon_i.svg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: -25px;
+
+}
+
+.destination__i:hover {
+    color: #777777;
+}
+
+
+.destination__search {
+  padding: 0px 168px 20px 101px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.search {}
+.place {
+
+
+}
+b {
+  color: #aeaeae;
+  font-family: 'Lato';
+  font-size: 16px;
+  line-height: 35px;
+  text-transform: uppercase;
+  padding: 20px 0px;
+}
+
+.place__a{
+  color: #aeaeae;
+  font-family: 'Lato';
+  font-size: 16px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+.place__a:hover{
+  color: #777777;
+  font-family: 'Lato-Black';
+  font-weight: 400;
+}
+
+                       /* Начало БЛОК info media*/ 
+@media ( max-width: 1000px){
+  .destination{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination__title {
+
+    padding: 40px 50px;
+  }
+
+  .destination__titlText {
+    flex-direction: column;
+    padding: 20px 30px;
+
+  }
+
+  .destination__search {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 10px;
+
+
+  }
+  .place{
+    width: 100%;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    
+  }
+  .place__a{
+    display: inline-block;
+    padding: 0 auto;
+    margin:  auto ;
+  }
+
+
+}
+@media ( max-width: 767px){
+  .title_h2{
+    font-size: 20px;
+  }
+
+  .blockInfo {
+      padding: 20px;
+}
+  .blockInfo__text{
+    padding: 0;
+  }
+  .blockInfo__titelText{
+    padding: 0;
+  }
+  .destination__title{
+      padding: 20px;
+  }
+
+
+}
+
+                       /* конец БЛОК info media*/
+
+                                                                  /*БЛОК destination конец*/
+.destination__serch-conteiner {}
+.serch-conteiner {
+  display: flex;
+  width: 234px;
+  height: 34px;
+  justify-content: left;
+  background-color: #fff;
+  border-radius: 34px;
+  padding: 8px
+}
+
+
+.serch-conteiner button {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  background: transparent; /*убираем фон и рамки кнопок*/
+  border: none !important; /*убираем фон и рамки кнопок*/
+  background: url('../img/icon/Search_(and_thou_shall_find).svg') 0 0 / 100% no-repeat;
+}
+.serch-conteiner input{
+  margin: 0 0 0 10px;
+  background: transparent; /*убираем фон и рамки кнопок*/
+  border: none !important; /*убираем фон и рамки кнопок*/
+
+}
+
+
+
+                                                          /*ачало слайдер*/
+
+/* Слайдер */
+.slick-slider{}
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track{
+  display: flex;
+  /*align-items: flex-start; /*для adaptiveHeight*/
+}
+/* Слайд */
+.slick-slide{}
+/* Слайд активный (показывается) */
+.slick-slide.slick-active{}
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.slick-slide.slick-center{}
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+/* Стрелка */
+.slick-arrow{}
+/* Стрелка влево */
+.slick-arrow.slick-prev{}
+/* Стрелка вправо */
+.slick-arrow.slick-next{}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+/* Точки (булиты) */
+.slick-dots{}
+.slick-dots li{}
+/* Активная точка */
+.slick-dots li.slick-active{}
+/* Элемент точки */
+.slick-dots li button{}
+
+
+/* стилизация слайдера */
+.myslaider{
+  position: relative;
+  padding: 0 150px;
+}
+/* Стрелка */
+.myslaider .slick-arrow{
+  position: absolute;
+  bottom: 18px;
+  z-index: 10;
+  font-size: 0;
+  width: 8px;
+  height: 14px;
+  background: transparent; /*убираем фон и рамки кнопок*/
+  border: none !important; /*убираем фон и рамки кнопок*/
+
+}
+
+/* Стрелка влево */
+.myslaider .slick-arrow.slick-prev{
+  left: 30%;
+  background: url('../img/prev.png') 0 0 / 100% no-repeat;
+
+}
+/* Стрелка вправо */
+.myslaider .slick-arrow.slick-next{
+  right: 30%;
+  background: url('../img/next.png') 0 0 / 100% no-repeat;
+}
+
+/* Точки (булиты) */
+.myslaider .slick-dots{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.myslaider .slick-dots li{
+  list-style: none;
+
+}
+/* Активная точка */
+.myslaider .slick-dots li.slick-active{
+
+}
+/* Элемент точки */
+.myslaider .slick-dots li button{
+  font-size: 18px;
+  font-family: 'Lato-Semibold';
+  color: #acacac;
+  padding: 10px;
+  background: transparent; /*убираем фон и рамки кнопок*/
+  border: none !important; /*убираем фон и рамки кнопок*/
+}
+
+/*стиль активного кружка или кнопки*/
+.myslaider .slick-dots li.slick-active button{
+  font-size: 24px;
+  color: #01a2a6;
+}
+
+/* Стрелка не активная */
+.myslaider .slick-arrow.slick-disabled{
+  opacity: 0;                           /* спрятали неактивную кнопку*/
+}
+
+.myslider__item{               /* все кадры */
+
+  text-align: center;
+  transition: 0.9s ease-in-out;
+  opacity: 0.2;               /*все слайды полупрозрачные*/
+}
+
+/* Слайд по центру */
+.slick-slide.slick-center{
+  opacity: 1;                 /* активный центральный кадр */
+}
+
+/* стилизация слайдера2 */
+.myslaider1{
+    min-width: 0;
+  position: relative;
+  padding: 0 150px;
+}
+/* Стрелка */
+.myslaider1 .slick-arrow{
+  position: absolute;
+  bottom: 18px;
+  z-index: 10;
+  font-size: 0;
+  width: 8px;
+  height: 14px;
+  background: transparent; /*убираем фон и рамки кнопок*/
+  border: none !important; /*убираем фон и рамки кнопок*/
+}
+/* Стрелка влево */
+.myslaider1 .slick-arrow.slick-prev{
+  left: 45%;
+  background: url('../img/prev.png') 0 0 / 100% no-repeat;
+}
+/* Стрелка вправо */
+.myslaider1 .slick-arrow.slick-next{
+  right: 43%;
+  background: url('../img/next.png') 0 0 / 100% no-repeat;
+}
+/* Точки (булиты) */
+.myslaider1 .slick-dots{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.myslaider1 .slick-dots li{
+  list-style: none;
+}
+/* Активная точка */
+.myslaider1 .slick-dots li.slick-active{
+}
+/* Элемент точки */
+.myslaider1 .slick-dots li button{
+  font-size: 18px;
+  font-family: 'Lato-Semibold';
+  color: #acacac;
+  padding: 10px;
+  background: transparent; /*убираем фон и рамки кнопок*/
+  border: none !important; /*убираем фон и рамки кнопок*/
+}
+/*стиль активного кружка или кнопки*/
+.myslaider1 .slick-dots li.slick-active button{
+  font-size: 24px;
+  color: #01a2a6;
+}
+.myslider1__item{
+  text-align: center;
+}
+                                                                  /*конец слайдер*/
+
+
+
+.footer {}
+
